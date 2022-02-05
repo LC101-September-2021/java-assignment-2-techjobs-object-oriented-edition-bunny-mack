@@ -94,4 +94,34 @@ public class Job {
     public int hashCode() {
         return Objects.hash(id);
     }
+
+    public String toString() {
+        if (name == "" && employer.getValue() == null && location.getValue() == null &&
+                positionType.getValue() == null && coreCompetency.getValue() == null) {
+            return "Oops! This job doesn't seem to exist";
+        }
+
+        if (name == "") {
+            name = "Data not available";
+        }
+        if (employer.getValue() == null) {
+            employer.setValue("Data not available");
+        }
+        if (location.getValue() == null) {
+            location.setValue("Data not available");
+        }
+        if (positionType.getValue() == null) {
+            positionType.setValue("Data not available");
+        }
+        if (coreCompetency.getValue() == null) {
+            coreCompetency.setValue("Data not available");
+        }
+        return "\n ID: " + id +
+                "\n Name: " + name +
+                "\n Employer: " + employer +
+                "\n Location: " + location +
+                "\n Position Type: " + positionType +
+                "\n Core Competency: " + coreCompetency +
+                "\n";
+    }
 }
