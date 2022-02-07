@@ -100,7 +100,6 @@ public class Job {
                 positionType.getValue() == null && coreCompetency.getValue() == null) {
             return "Oops! This job doesn't seem to exist";
         }
-
         if (name == "") {
             name = "Data not available";
         }
