@@ -62,7 +62,7 @@ public class JobTest {
 
     @Test
     public void testToString3() {
-        Job anotherJob = new Job("Baker", new Employer(), new Location(), new PositionType(), new CoreCompetency());
+        Job anotherJob = new Job("Baker", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
         assertTrue(anotherJob.toString().equals(
                 "\n ID: " + anotherJob.getId() +
                         "\n Name: " + anotherJob.getName() +
@@ -76,7 +76,7 @@ public class JobTest {
 
     @Test
     public void testToString4() {
-        Job anotherJob = new Job("", new Employer(), new Location(), new PositionType(), new CoreCompetency());
+        Job anotherJob = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
         assertTrue(anotherJob.toString().equals("Oops! This job doesn't seem to exist"));
     }
 

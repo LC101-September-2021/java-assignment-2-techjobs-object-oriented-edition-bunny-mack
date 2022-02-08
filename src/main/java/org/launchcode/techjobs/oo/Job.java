@@ -96,23 +96,23 @@ public class Job {
     }
 
     public String toString() {
-        if (name == "" && employer.getValue() == null && location.getValue() == null &&
-                positionType.getValue() == null && coreCompetency.getValue() == null) {
+        if (name == "" && employer.getValue() == "" && location.getValue() == "" &&
+                positionType.getValue() == "" && coreCompetency.getValue() == "") {
             return "Oops! This job doesn't seem to exist";
         }
         if (name == "") {
             name = "Data not available";
         }
-        if (employer.getValue() == null) {
+        if (employer.getValue() == "") {
             employer.setValue("Data not available");
         }
-        if (location.getValue() == null) {
+        if (location.getValue() == "") {
             location.setValue("Data not available");
         }
-        if (positionType.getValue() == null) {
+        if (positionType.getValue() == "") {
             positionType.setValue("Data not available");
         }
-        if (coreCompetency.getValue() == null) {
+        if (coreCompetency.getValue() == "") {
             coreCompetency.setValue("Data not available");
         }
         return "\n ID: " + id +
