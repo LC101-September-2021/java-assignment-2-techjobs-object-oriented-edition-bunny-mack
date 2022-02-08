@@ -13,22 +13,11 @@ public class PositionType extends JobField {
         nextId++;
     }
 
-//    public PositionType(String value) {
-//        this();
-//        this.value = value;
-//    }
-
     public PositionType(String value) {
         super(value);
     }
 
     // TODO: Add a custom toString() method that returns the data stored in 'value'.
-
-//    @Override
-//    public String toString() {
-//        return value;
-//    }
-
     // TODO: Add custom equals and hashCode methods. Consider two PositionType objects "equal" when
     //  their id fields match.
 
@@ -44,20 +33,5 @@ public class PositionType extends JobField {
     public int hashCode() {
         return Objects.hash(id);
     }
-
-
-    // Getters and Setters:
-
-//    public int getId() {
-//        return id;
-//    }
-//
-//    public String getValue() {
-//        return value;
-//    }
-//
-//    public void setValue(String value) {
-//        this.value = value;
-//    }
 
 }
