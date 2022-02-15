@@ -25,13 +25,12 @@ public class JobTest {
     public void testJobConstructorSetsAllFields() {
         Job anotherJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         assertTrue(anotherJob instanceof Job);
-        //assertTrue(anotherJob.getId() == 3);
+        assertFalse(anotherJob.getId() == 0);
         assertTrue(anotherJob.getName() == "Product tester");
         assertTrue(anotherJob.getEmployer() instanceof Employer);
         assertTrue(anotherJob.getLocation() instanceof Location);
         assertTrue(anotherJob.getPositionType() instanceof PositionType);
         assertTrue(anotherJob.getCoreCompetency() instanceof CoreCompetency);
-        assertEquals("Product tester", "Product tester");
     }
 
     @Test
@@ -63,7 +62,7 @@ public class JobTest {
     }
 
     @Test
-    public void testToString3() {
+    public void testToStringContainsCorrectLabelsAndData() {
         Job anotherJob = new Job("Baker", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
         assertTrue(anotherJob.toString().equals(
                 "\n ID: " + anotherJob.getId() +
@@ -78,9 +77,10 @@ public class JobTest {
     }
 
     @Test
-    public void testToString4() {
+    public void testToStringHandlesEmptyField() {
         Job anotherJob = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
         assertTrue(anotherJob.toString().equals("Oops! This job doesn't seem to exist"));
+        assertEquals("test", "test");
     }
 
 }
