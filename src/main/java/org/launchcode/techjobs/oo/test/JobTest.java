@@ -31,11 +31,11 @@ public class JobTest {
         assertTrue(anotherJob.getLocation() instanceof Location);
         assertTrue(anotherJob.getPositionType() instanceof PositionType);
         assertTrue(anotherJob.getCoreCompetency() instanceof CoreCompetency);
-        assertEquals(anotherJob.getName(), anotherJob.getName());
-        assertEquals(anotherJob.getEmployer(), anotherJob.getEmployer());
-        assertEquals(anotherJob.getLocation(), anotherJob.getLocation());
-        assertEquals(anotherJob.getPositionType(), anotherJob.getPositionType());
-        assertEquals(anotherJob.getCoreCompetency(), anotherJob.getCoreCompetency());
+//        assertEquals(anotherJob.getName(), anotherJob.getName());
+//        assertEquals(anotherJob.getEmployer(), anotherJob.getEmployer());
+//        assertEquals(anotherJob.getLocation(), anotherJob.getLocation());
+//        assertEquals(anotherJob.getPositionType(), anotherJob.getPositionType());
+//        assertEquals(anotherJob.getCoreCompetency(), anotherJob.getCoreCompetency());
     }
 
     @Test
@@ -103,6 +103,7 @@ public class JobTest {
     public void testToStringHandlesEmptyField() {
         Job anotherJob = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
         assertTrue(anotherJob.toString().equals("Oops! This job doesn't seem to exist"));
+        assertEquals("test", "test");
     }
 
 }
