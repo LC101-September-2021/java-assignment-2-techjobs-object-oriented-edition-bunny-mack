@@ -31,7 +31,12 @@ public class JobTest {
         assertTrue(anotherJob.getLocation() instanceof Location);
         assertTrue(anotherJob.getPositionType() instanceof PositionType);
         assertTrue(anotherJob.getCoreCompetency() instanceof CoreCompetency);
-        assertEquals("test", "test");
+        assertEquals(anotherJob.getName(), "Product tester");
+        assertEquals(anotherJob.getEmployer().toString(), "ACME");
+        assertEquals(anotherJob.getLocation().toString(), "Desert");
+        assertEquals(anotherJob.getPositionType().toString(), "Quality control");
+        assertEquals(anotherJob.getCoreCompetency().toString(), "Persistence");
+
     }
 
     @Test
@@ -57,11 +62,11 @@ public class JobTest {
         Job anotherJob = new Job("Baker", new Employer("The Cakery"), new Location("Sugar Town"), new PositionType("line"), new CoreCompetency("sweet tooth"));
         assertTrue(anotherJob.toString().equals(
                 "\nID: " + anotherJob.getId() +
-                        "\n Name: " + anotherJob.getName() +
-                        "\n Employer: " + anotherJob.getEmployer() +
-                        "\n Location: " + anotherJob.getLocation() +
-                        "\n Position Type: " + anotherJob.getPositionType() +
-                        "\n Core Competency: " + anotherJob.getCoreCompetency() +
+                        "\nName: " + anotherJob.getName() +
+                        "\nEmployer: " + anotherJob.getEmployer() +
+                        "\nLocation: " + anotherJob.getLocation() +
+                        "\nPosition Type: " + anotherJob.getPositionType() +
+                        "\nCore Competency: " + anotherJob.getCoreCompetency() +
                         "\n"
         ));
     }
@@ -71,11 +76,11 @@ public class JobTest {
         Job anotherJob = new Job("Baker", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
         assertTrue(anotherJob.toString().equals(
                 "\nID: " + anotherJob.getId() +
-                        "\n Name: " + anotherJob.getName() +
-                        "\n Employer: Data not available" +
-                        "\n Location: Data not available" +
-                        "\n Position Type: Data not available" +
-                        "\n Core Competency: Data not available" +
+                        "\nName: " + anotherJob.getName() +
+                        "\nEmployer: Data not available" +
+                        "\nLocation: Data not available" +
+                        "\nPosition Type: Data not available" +
+                        "\nCore Competency: Data not available" +
                         "\n"
         ));
         assertEquals("Test", "Test");
