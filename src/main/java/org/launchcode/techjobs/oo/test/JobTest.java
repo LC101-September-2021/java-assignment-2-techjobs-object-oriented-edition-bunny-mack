@@ -31,6 +31,7 @@ public class JobTest {
         assertTrue(anotherJob.getLocation() instanceof Location);
         assertTrue(anotherJob.getPositionType() instanceof PositionType);
         assertTrue(anotherJob.getCoreCompetency() instanceof CoreCompetency);
+        assertEquals("test", "test");
     }
 
     @Test
@@ -45,13 +46,17 @@ public class JobTest {
         Job anotherJob = new Job("Baker", new Employer("The Cakery"), new Location("Sugar Town"), new PositionType("line"), new CoreCompetency("sweet tooth"));
         assertTrue(anotherJob.toString().contains("\n"));
         assertEquals('\n', '\n');
+        char firstChar = anotherJob.toString().charAt(0);
+        char lastChar = anotherJob.toString().charAt(anotherJob.toString().length()-1);
+        assertEquals(firstChar, '\n');
+        assertEquals(lastChar, '\n');
     }
 
     @Test
     public void testTestToStringStartsAndEndsWithNewLineCallsToString() {
         Job anotherJob = new Job("Baker", new Employer("The Cakery"), new Location("Sugar Town"), new PositionType("line"), new CoreCompetency("sweet tooth"));
         assertTrue(anotherJob.toString().equals(
-                "\n ID: " + anotherJob.getId() +
+                "\nID: " + anotherJob.getId() +
                         "\n Name: " + anotherJob.getName() +
                         "\n Employer: " + anotherJob.getEmployer() +
                         "\n Location: " + anotherJob.getLocation() +
@@ -65,7 +70,7 @@ public class JobTest {
     public void testToStringContainsCorrectLabelsAndData() {
         Job anotherJob = new Job("Baker", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
         assertTrue(anotherJob.toString().equals(
-                "\n ID: " + anotherJob.getId() +
+                "\nID: " + anotherJob.getId() +
                         "\n Name: " + anotherJob.getName() +
                         "\n Employer: Data not available" +
                         "\n Location: Data not available" +
