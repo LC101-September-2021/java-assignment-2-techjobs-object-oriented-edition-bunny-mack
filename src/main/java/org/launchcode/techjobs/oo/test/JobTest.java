@@ -36,7 +36,6 @@ public class JobTest {
         assertEquals(anotherJob.getLocation().toString(), "Desert");
         assertEquals(anotherJob.getPositionType().toString(), "Quality control");
         assertEquals(anotherJob.getCoreCompetency().toString(), "Persistence");
-
     }
 
     @Test
@@ -83,7 +82,13 @@ public class JobTest {
                         "\nCore Competency: Data not available" +
                         "\n"
         ));
-        assertEquals("Test", "Test");
+        assertEquals(anotherJob.toString(), "\nID: " + anotherJob.getId() +
+                "\nName: " + anotherJob.getName() +
+                "\nEmployer: Data not available" +
+                "\nLocation: Data not available" +
+                "\nPosition Type: Data not available" +
+                "\nCore Competency: Data not available" +
+                "\n");
     }
 
     @Test
