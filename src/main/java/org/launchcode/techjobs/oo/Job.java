@@ -120,9 +120,7 @@ public class Job {
                         "Employer: %s\n" +
                         "Location: %s\n" +
                         "Position Type: %s\n" +
-                        "Core Competency: %s\n", id, name, employer, location,
-                positionType, coreCompetency);
-
-               // "\nID: "+id+ "\nName: "+name+ "\nEmployer: "+employer+ "\nLocation: "+location+ "\nPosition Type: "+positionType+ "\nCore Competency: "+coreCompetency+ "\n";
+                        "Core Competency: %s\n", id, name.toString(), employer.toString(), location.toString(),
+                positionType.toString(), coreCompetency.toString());
     }
 }

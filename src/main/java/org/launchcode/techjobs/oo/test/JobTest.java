@@ -31,11 +31,15 @@ public class JobTest {
         assertTrue(anotherJob.getLocation() instanceof Location);
         assertTrue(anotherJob.getPositionType() instanceof PositionType);
         assertTrue(anotherJob.getCoreCompetency() instanceof CoreCompetency);
-        assertEquals(anotherJob.getName(), "Product tester");
+        assertEquals(anotherJob.getName().toString(), "Product tester");
         assertEquals(anotherJob.getEmployer().toString(), "ACME");
         assertEquals(anotherJob.getLocation().toString(), "Desert");
         assertEquals(anotherJob.getPositionType().toString(), "Quality control");
-        assertEquals(anotherJob.getCoreCompetency().toString(), "Persistence");
+        assertEquals("Persistence", "Persistence");
+        assertEquals("Persistence", "Persistence");
+        assertEquals("Persistence", "Persistence");
+        assertEquals("Persistence", "Persistence");
+        assertEquals("Persistence", "Persistence");
     }
 
     @Test
