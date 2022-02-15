@@ -1,5 +1,6 @@
 package org.launchcode.techjobs.oo;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Objects;
 
 public class Job {
@@ -95,13 +96,24 @@ public class Job {
         return Objects.hash(id);
     }
 
+
+//    public String getJobString (Job job) throws NoSuchMethodException, ClassNotFoundException, InvocationTargetException, IllegalAccessException {
+//        return String.format("\nID: %d\n" +
+//                        "Name: %s\n" +
+//                        "Employer: %s\n" +
+//                        "Location: %s\n" +
+//                        "Position Type: %s\n" +
+//                        "Core Competency: %s\n", getJobId(job), getJobFieldString(job, "name", true), getJobFieldString(job, "employer", true), getJobFieldString(job, "location", true),
+//                getJobFieldString(job, "positionType", true), getJobFieldString(job, "coreCompetency", true));
+//    }
+
     public String toString() {
         if (name == "" && employer.getValue() == "" && location.getValue() == "" &&
                 positionType.getValue() == "" && coreCompetency.getValue() == "") {
             return "Oops! This job doesn't seem to exist";
         }
-        if (name == "") {
-            name = "Data not available";
+        if (getName() == "") {
+            setName("Data not available");
         }
         if (employer.getValue() == "") {
             employer.setValue("Data not available");
@@ -120,7 +132,7 @@ public class Job {
                         "Employer: %s\n" +
                         "Location: %s\n" +
                         "Position Type: %s\n" +
-                        "Core Competency: %s\n", id, name.toString(), employer.toString(), location.toString(),
+                        "Core Competency: %s\n", id, name, employer.toString(), location.toString(),
                 positionType.toString(), coreCompetency.toString());
     }
 }
